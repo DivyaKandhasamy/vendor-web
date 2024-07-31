@@ -5,10 +5,10 @@ dotenv.config();
 
 const dbURI = process.env.MONGO_URI;
 
-const connectToDatabase = async () => {
+export const connectToVendorDB = async () => {
   try {
     await mongoose.connect(dbURI);
-    console.log(`Connected to MongoDB at ${dbURI}`);
+    console.log(`Connected to MongoDB`);
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`);
   }
@@ -31,7 +31,5 @@ process.on('SIGINT', async () => {
   console.log('Mongoose disconnected through app termination');
   process.exit(0);
 });
-
-connectToDatabase();
 
 export default mongoose;
