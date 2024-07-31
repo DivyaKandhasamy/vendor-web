@@ -45,7 +45,7 @@ export default function Sidebar() {
                   </button>
                 </div>
               </TransitionChild>
-              <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-slate-700 px-6 pb-4">
+              <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-sky-600 px-6 pb-4">
                 <div className="flex h-16 shrink-0 items-center">
                   <img
                     alt="Your Company"
@@ -64,8 +64,8 @@ export default function Sidebar() {
                               className={({ isActive }) =>
                                 classNames(
                                   isActive
-                                    ? 'bg-slate-800 text-white'
-                                    : 'text-indigo-200 hover:bg-slate-800 hover:text-white',
+                                    ? 'bg-sky-700 text-white'
+                                    : 'text-indigo-200 hover:bg-sky-700 hover:text-white',
                                   'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                                 )
                               }
@@ -83,7 +83,7 @@ export default function Sidebar() {
                     {/* <li className="mt-auto">
                       <a
                         href="#"
-                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-slate-800 hover:text-white"
+                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-sky-700 hover:text-white"
                       >
                         <Cog6ToothIcon
                           aria-hidden="true"
@@ -99,7 +99,7 @@ export default function Sidebar() {
           </div>
         </Dialog>
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-slate-700 px-6 pb-4">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-sky-600 px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center">
               <img
                 alt="Your Company"
@@ -118,8 +118,8 @@ export default function Sidebar() {
                           className={({ isActive }) =>
                             classNames(
                               isActive
-                                ? 'bg-slate-800 text-white'
-                                : 'text-indigo-200 hover:bg-slate-800 hover:text-white',
+                                ? 'bg-sky-700 text-white'
+                                : 'text-indigo-200 hover:bg-sky-700 hover:text-white',
                               'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
                             )
                           }
@@ -137,7 +137,7 @@ export default function Sidebar() {
                 {/* <li className="mt-auto">
                   <a
                     href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-slate-800 hover:text-white"
+                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-sky-700 hover:text-white"
                   >
                     <Cog6ToothIcon
                       aria-hidden="true"
