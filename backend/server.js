@@ -1,13 +1,21 @@
 import express from 'express';
-import mongoose from './config/db.js';
-
+import vendorRoutes from './routes/vendorRoutes.js';
+import errorHandler from './middleware/errorMiddleware.js';
+import mongoose from 'mongoose';
+import { connectToVendorDB } from './config/db.js';
 
 const app = express();
 
-// Your middleware and routes go here
+const port = process.env.PORT || 3000;
+
+app.use('/vendors', vendorRoutes);
+
+app.use(errorHandler);
+
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
+connectToVendorDB();
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
