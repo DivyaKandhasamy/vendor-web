@@ -1,16 +1,22 @@
-import Sidebar from "./components/Sidebar";
-import Routing from "./components/Routing";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home'
+import { Route, Routes } from 'react-router-dom';
+import Vendor from './pages/Vendor';
+import APT from './pages/APT';
 
 function App() {
   return (
-    <div className="flex h-full">
-      <div className="sidebar-wrapper">
-      <Sidebar />
-      </div>
-      <div className="content-wrapper">
-        <Routing />
-      </div>
-    </div>
+    <>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/vendors' element={<Vendor />} />
+        <Route path='/apt' element={<APT />} />
+      </Routes>
+      <Footer/>
+    </>
   );
 }
 
