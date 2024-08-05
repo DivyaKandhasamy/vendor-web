@@ -2,14 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-.sidebar-wrapper{
-    width: 18rem !important;
+:root{
+  --primary-color-blue: #0f172a;
+  --primary-color-green: #052e16;
 }
 
-.content-wrapper{
-    width: calc(100vw - 18rem) !important;
-    height: 100%;
+body {
+  @apply bg-primary
 }
-#root{
-    height: 100vh;
+
+.logo{
+  mix-blend-mode: plus-lighter;
+}
+
+.bg-primary{
+  background-color: var(--primary-color-blue);
+}
+
+.text-primary{
+  color: var(--primary-color-blue);
+}
+
+.pattern-bg{
+  position: absolute;
+  opacity: 0.2;
+  background: radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent) 10px 10px, linear-gradient(black 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, black 0.8px, var(--primary-color-blue) 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
 }
