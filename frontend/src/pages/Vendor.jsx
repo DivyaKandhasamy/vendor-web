@@ -1,9 +1,11 @@
-import React from "react";
+import VendorGrid from '../components/VendorGrid';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react';
 
 export default function Vendor(){
     return (
         <>
-            <p className="text-white">Vendor</p>
+           <VendorGrid/>
         </>
     )
 }

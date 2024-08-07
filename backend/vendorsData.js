@@ -1,12 +1,4 @@
 export const vendorsData = [{
-    vendorName: '000webhost',
-    vendorDesc: `In approximately March 2015, the free web hosting provider 000webhost suffered a major data breach that exposed almost 15 million customer records. The data was sold and traded before 000webhost was alerted in October. The breach included names, email addresses and plain text passwords.`,
-    breachDate: '01-03-2023',
-    dateAdded: '10-07-2024',
-    compromisedAccounts: 65465518,
-    compromisedData: ['Email addresses', 'IP adresses', 'Names', 'Passwords'],
-    riskScore: 11
-},{
     vendorName: '123RF',
     vendorDesc: `In March 2020, the stock photo site 123RF suffered a data breach which impacted over 8 million subscribers and was subsequently sold online. The breach included email, IP and physical addresses, names, phone numbers and passwords stored as MD5 hashes. The data was provided to HIBP by dehashed.com.`,
     breachDate: '01-05-2023',
@@ -14,6 +6,15 @@ export const vendorsData = [{
     compromisedAccounts: 1784849,
     compromisedData: ['Email addresses', 'IP adresses', 'Names', 'Passwords', 'Phone numbers', 'Physical addresses', 'Usernames'],
     riskScore: 23
+},
+{
+    vendorName: '000webhost',
+    vendorDesc: `In approximately March 2015, the free web hosting provider 000webhost suffered a major data breach that exposed almost 15 million customer records. The data was sold and traded before 000webhost was alerted in October. The breach included names, email addresses and plain text passwords.`,
+    breachDate: '01-03-2023',
+    dateAdded: '10-07-2024',
+    compromisedAccounts: 65465518,
+    compromisedData: ['Email addresses', 'IP adresses', 'Names', 'Passwords'],
+    riskScore: 11
 },{
     vendorName: '126',
     vendorDesc: `In approximately 2012, it's alleged that the Chinese email service known as 126 suffered a data breach that impacted 6.4 million subscribers. Whilst there is evidence that the data is legitimate, due to the difficulty of emphatically verifying the Chinese breach it has been flagged as "unverified". The data in the breach contains email addresses and plain text passwords.`,
