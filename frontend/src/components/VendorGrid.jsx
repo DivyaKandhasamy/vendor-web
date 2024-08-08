@@ -7,19 +7,43 @@ const VendorGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
+  const [vendorNameFilter, setVendorNameFilter] = useState('');
+  const [breachDateFilter, setBreachDateFilter] = useState('');
+  const [alphabetFilter, setAlphabetFilter] = useState('');
+
+  const itemsPerPage = 10; // Number of items per page
+
   useEffect(() => {
-    async function fetchData(page) {
+    async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:5000/vendors/?page=${page}&limit=10`);
+        const response = await axios.get('http://localhost:5000/vendors');
         setGridData(response.data.data);
-        setTotalPages(response.data.totalPages);
-        setCurrentPage(response.data.currentPage);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
-    fetchData(currentPage);
-  }, [currentPage]);
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Reset to page 1 when filters change
+    setCurrentPage(1);
+  }, [vendorNameFilter, breachDateFilter, alphabetFilter]);
+
+  useEffect(() => {
+    // Update the total number of pages whenever the data or filters change
+    const filtered = gridData.filter(data => {
+      const breachYear = new Date(data.breachDate).getFullYear();
+      const startsWithLetter = alphabetFilter === '' || data.vendorName.toUpperCase().startsWith(alphabetFilter);
+
+      return (
+        (vendorNameFilter === '' || data.vendorName === vendorNameFilter) &&
+        (breachDateFilter === '' || breachYear === parseInt(breachDateFilter)) &&
+        startsWithLetter
+      );
+    });
+    setTotalPages(Math.ceil(filtered.length / itemsPerPage));
+  }, [gridData, vendorNameFilter, breachDateFilter, alphabetFilter]);
 
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -27,8 +51,20 @@ const VendorGrid = () => {
     }
   };
 
+  const filteredData = gridData.filter(data => {
+    const breachYear = new Date(data.breachDate).getFullYear();
+    const startsWithLetter = alphabetFilter === '' || data.vendorName.toUpperCase().startsWith(alphabetFilter);
+
+    return (
+      (vendorNameFilter === '' || data.vendorName === vendorNameFilter) &&
+      (breachDateFilter === '' || breachYear === parseInt(breachDateFilter)) &&
+      startsWithLetter
+    );
+  });
+
+  const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
   return (
-    
     <div className="px-4 sm:px-6 lg:px-8 bg-gray-100">
       <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -36,28 +72,73 @@ const VendorGrid = () => {
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr>
-                  <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
-                    VendorName
+                  <th className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                    <div className="flex items-center">
+                      VendorName
+                      <div className="ml-2">
+                        <select
+                          className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md"
+                          value={vendorNameFilter}
+                          onChange={(e) => setVendorNameFilter(e.target.value)}
+                        >
+                          <option value="">All</option>
+                          {Array.from(new Set(gridData.map(data => data.vendorName))).map((vendorName) => (
+                            <option key={vendorName} value={vendorName}>{vendorName}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="ml-4">
+                        <div className="flex flex-wrap">
+                          {Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)).map(letter => (
+                            <button
+                              key={letter}
+                              className={`px-2 py-1 border rounded-md text-sm ${alphabetFilter === letter ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
+                              onClick={() => setAlphabetFilter(letter)}
+                            >
+                              {letter}
+                            </button>
+                          ))}
+                          <button
+                            className={`px-2 py-1 border rounded-md text-sm ${alphabetFilter === '' ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
+                            onClick={() => setAlphabetFilter('')}
+                          >
+                            All
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </th>
-                  <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    Breach Date
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    <div className="flex items-center">
+                      Breach Date
+                      <select
+                        className="ml-2 bg-white border border-gray-300 text-gray-900 text-sm rounded-md"
+                        value={breachDateFilter}
+                        onChange={(e) => setBreachDateFilter(e.target.value)}
+                      >
+                        <option value="">All</option>
+                        {Array.from(new Set(gridData.map(data => new Date(data.breachDate).getFullYear()))).map((year) => (
+                          <option key={year} value={year}>{year}</option>
+                        ))}
+                      </select>
+                    </div>
                   </th>
-                  <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                     Date Added
                   </th>
-                  <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                     Compromised Accounts
                   </th>
-                  <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                     Compromised Data
                   </th>
-                  <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                     RiskScore
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {gridData.map((data) => {
+                {paginatedData.map((data) => {
                   const breachDate = new Date(data.breachDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
