@@ -12,9 +12,9 @@ const Cards = () => {
           <h2 className='text-2xl font-bold text-center py-8'>Community Edition</h2>
           <p className='text-center text-4xl font-bold'>Free</p>
           <div className='text-center font-medium'>
-            <p className='py-2 border-b mx-8 mt-8'>500 GB Storage</p>
-            <p className='py-2 border-b mx-8'>1 Granted User</p>
-            <p className='py-2 border-b mx-8'>Send up to 2 GB</p>
+            <p className='py-2 border-b mx-8 mt-8'>Limited access to Database</p>
+            <p className='py-2 border-b mx-8'>Ability to request vendors</p>
+            <p className='py-2 border-b mx-8'>Manual Reports</p>
           </div>
           <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[150px] rounded-md font-medium my-6 mx-auto py-2 text-black'>Login</button>
         </div>
@@ -23,9 +23,9 @@ const Cards = () => {
           <h2 className='text-2xl font-bold text-center py-8'>Commercial Edition</h2>
           <p className='text-center text-4xl font-bold'>$149</p>
           <div className='text-center font-medium'>
-            <p className='py-2 border-b mx-8 mt-8'>500 GB Storage</p>
-            <p className='py-2 border-b mx-8'>1 Granted User</p>
-            <p className='py-2 border-b mx-8'>Send up to 2 GB</p>
+            <p className='py-2 border-b mx-8 mt-8'>Unlimited access to database</p>
+            <p className='py-2 border-b mx-8'>API access</p>
+            <p className='py-2 border-b mx-8'>Unlimited Vendor Request & Automated Reports</p>
           </div>
           <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[150px] rounded-md font-medium my-6 mx-auto py-2 text-black'>Coming Soon</button>
         </div>

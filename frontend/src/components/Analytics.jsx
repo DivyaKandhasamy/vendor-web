@@ -23,6 +23,11 @@ const Analytics = (props) => {
         </div>
       </div>
       <Grid gridData = {props.gridData}/>
+      <div className='text-center'>
+      <a href='/vendors'>
+        <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>See all Vendors</button>
+      </a>
+      </div>
     </div>
   );
 };
