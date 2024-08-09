@@ -20,7 +20,9 @@ const Hero = () => {
               />
             </div>
             <p className='md:text-2xl text-xl font-bold text-gray-500'>Reduce third-party incidents by 75% and transform how your team identifies, monitors, mitigates, and reports on risk.</p>
-            <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>See Vendors -&gt;</button>
+            <a href='/vendors'>
+              <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>See Vendors</button>
+            </a>
           </div>
         </div>
         <div className='flex-1'>
