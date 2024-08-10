@@ -138,7 +138,7 @@ const VendorGrid = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {paginatedData.map((data) => {
+                {paginatedData.length > 0 && paginatedData.map((data) => {
                   const breachDate = new Date(data.breachDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
@@ -156,6 +156,15 @@ const VendorGrid = () => {
                     </tr>
                   );
                 })}
+                {!paginatedData.length > 0 && 
+                  <tr>
+                    <td/>
+                    <td/>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">No records found</td>
+                    <td/>
+                    <td/>
+                    <td/>
+                  </tr>}
               </tbody>
             </table>}
             {!gridData.length > 0 &&
