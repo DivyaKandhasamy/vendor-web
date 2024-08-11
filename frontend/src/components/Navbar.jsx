@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className='bg-gray-100 flex justify-between items-center h-24 mx-auto text-gray-900'>
       <div className='w-full -z-50 pattern-bg h-full'/>
       <div>
-        <img alt='logo' className='w-52' src={logo}/>
+        <img alt='logo' className='w-52 logo' src={logo}/>
       </div>
       <ul className='hidden px-10 items-center md:flex'>
         <li className='p-4'><Link to="/">Home</Link></li>
