@@ -27,6 +27,10 @@ const vendorSchema = new mongoose.Schema({
     required: true
   },
   riskScore: {
+    type: String,
+    required: true
+  },
+  companyid: {
     type: Number,
     required: true
   }

@@ -29,12 +29,12 @@ export const getVendorsLatest = async (req, res, next) => {
   }
 };
 
-export const createVendors = async () => {
+export const createVendors = async (req,res) => {
     const vendors = vendorsData; // Assuming vendors data comes from the request body
     try {
       const insertedVendors = await Vendor.insertMany(vendors);
       res.status(201).json(insertedVendors);
     } catch (error) {
-      next(error);
+     res.send(error)
     }
   };

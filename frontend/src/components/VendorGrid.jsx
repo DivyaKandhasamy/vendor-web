@@ -10,6 +10,7 @@ const VendorGrid = () => {
   const [vendorNameFilter, setVendorNameFilter] = useState('');
   const [breachDateFilter, setBreachDateFilter] = useState('');
   const [alphabetFilter, setAlphabetFilter] = useState('');
+  const [riskScoreFilter, setRiskScoreFilter] = useState('');
 
   const itemsPerPage = 10; // Number of items per page
 
@@ -28,7 +29,7 @@ const VendorGrid = () => {
   useEffect(() => {
     // Reset to page 1 when filters change
     setCurrentPage(1);
-  }, [vendorNameFilter, breachDateFilter, alphabetFilter]);
+  }, [vendorNameFilter, breachDateFilter, alphabetFilter,riskScoreFilter]);
 
   useEffect(() => {
     // Update the total number of pages whenever the data or filters change
@@ -38,12 +39,13 @@ const VendorGrid = () => {
 
       return (
         (vendorNameFilter === '' || data.vendorName === vendorNameFilter) &&
+        (riskScoreFilter === '' || data.riskScore === riskScoreFilter) &&
         (breachDateFilter === '' || breachYear === parseInt(breachDateFilter)) &&
         startsWithLetter
       );
     });
     setTotalPages(Math.ceil(filtered.length / itemsPerPage));
-  }, [gridData, vendorNameFilter, breachDateFilter, alphabetFilter]);
+  }, [gridData, vendorNameFilter, breachDateFilter, alphabetFilter,riskScoreFilter]);
 
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -57,6 +59,7 @@ const VendorGrid = () => {
 
     return (
       (vendorNameFilter === '' || data.vendorName === vendorNameFilter) &&
+      (riskScoreFilter === '' || data.riskScore === riskScoreFilter) &&
       (breachDateFilter === '' || breachYear === parseInt(breachDateFilter)) &&
       startsWithLetter
     );
@@ -132,8 +135,22 @@ const VendorGrid = () => {
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                     Compromised Data
                   </th>
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    RiskScore
+                  <th className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                    <div className="flex items-center">
+                      Risk Score
+                      <div className="ml-2">
+                        <select
+                          className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md"
+                          value={riskScoreFilter}
+                          onChange={(e) => setRiskScoreFilter(e.target.value)}
+                        >
+                          <option value="">All</option>
+                          {Array.from(new Set(gridData.map(data => data.riskScore))).map((RiskScore) => (
+                            <option key={RiskScore} value={RiskScore}>{RiskScore}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
                   </th>
                 </tr>
               </thead>
