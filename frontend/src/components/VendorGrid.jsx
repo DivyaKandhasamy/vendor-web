@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/20/solid';
 
 const VendorGrid = () => {
@@ -160,8 +161,10 @@ const VendorGrid = () => {
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
                     <tr key={data.id}>
-                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                        {data.vendorName}
+                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                        <Link to={`/vendorDetails`} className='underline'>
+                          {data.vendorName}
+                        </Link>
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{breachDate}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{dateAdded}</td>

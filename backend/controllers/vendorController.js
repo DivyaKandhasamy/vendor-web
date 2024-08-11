@@ -1,5 +1,7 @@
 import Vendor from '../models/vendors.js';
+import { vendorsDetailsData } from '../vendorDetailsData.js';
 import { vendorsData } from '../vendorsData.js';
+import vendorDetails from '../models/vendorDetails.js';
 
 export const getVendors = async (req, res, next) => {
   try {
@@ -29,10 +31,40 @@ export const getVendorsLatest = async (req, res, next) => {
   }
 };
 
+export const getVendorDetails = async (req, res, next) => {
+  try {
+    const vendors = await vendorDetails.find();
+    res.status(200).json(vendors);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getVendorDetailsById = async (req, res, next) => {
+  try {
+    const vendors = await vendorDetails.findOne({"companyId":req.params.id});
+    res.status(200).json(vendors);
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 export const createVendors = async (req,res) => {
     const vendors = vendorsData; // Assuming vendors data comes from the request body
     try {
       const insertedVendors = await Vendor.insertMany(vendors);
+      res.status(201).json(insertedVendors);
+    } catch (error) {
+     res.send(error)
+    }
+  };
+
+  export const createVendorDetails = async (req,res) => {
+    const vendors = vendorsDetailsData // Assuming vendors data comes from the request body
+    try {
+      const insertedVendors = await vendorDetails.insertMany(vendors);
       res.status(201).json(insertedVendors);
     } catch (error) {
      res.send(error)
