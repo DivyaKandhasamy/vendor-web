@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom';
 import Vendor from './pages/Vendor';
 import APT from './pages/APT';
-import VendorDetails from './components/VendorDetails';
+import VendorDetails from './pages/VendorDetails';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/vendors' element={<Vendor/>} />
         <Route path='/apt' element={<APT />} />
-        <Route path="/vendorDetails" element={<VendorDetails/>} />
+        <Route path="/vendor/details/:id" element={<VendorDetails/>} />
       </Routes>
       <Footer/>
     </>
