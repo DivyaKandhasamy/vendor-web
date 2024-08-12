@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Vendor from './pages/Vendor';
 import APT from './pages/APT';
 import VendorDetails from './pages/VendorDetails';
+import DetailPage from './pages/APTDetail';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/vendors' element={<Vendor/>} />
         <Route path='/apt' element={<APT />} />
         <Route path="/vendor/details/:id" element={<VendorDetails/>} />
+        <Route path='/apt/details/:id' element={<DetailPage />} />
       </Routes>
       <Footer/>
     </>

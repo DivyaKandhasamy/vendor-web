@@ -48,6 +48,9 @@ const Navbar = () => {
             APT
           </NavLink>
         </li>
+        <li key={0} className='p-4'><Link to="/">Home</Link></li>
+        <li key={1} className='p-4'><Link to="/vendors">Vendors</Link></li>
+        <li key={2} className='p-4'><Link to="/apt">APT</Link></li>
         <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[150px] rounded-md font-medium my-6 mx-auto py-2 text-black'>Login</button>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
@@ -88,6 +91,11 @@ const Navbar = () => {
         </li>
         <li className='p-4 border-b border-gray-600'>About</li>
         <li className='p-4'>Contact</li>
+          <li key={0} className='p-4 border-b border-gray-600'>Home</li>
+          <li key={1} className='p-4 border-b border-gray-600'>Company</li>
+          <li key={2} className='p-4 border-b border-gray-600'>Resources</li>
+          <li key={3} className='p-4 border-b border-gray-600'>About</li>
+          <li key={4} className='p-4'>Contact</li>
       </ul>
     </div>
   );
