@@ -1,9 +1,18 @@
 import mongoose from 'mongoose';
 
 const aptSchema = new mongoose.Schema({
- name: {
+ aptName: {
     type: String,
     required: true
+  },
+  targetedCountriesIds: {
+    type: [Number]
+  },
+  sectorIds: {
+    type: [Number]
+  },
+  aptId: {
+    type: Number
   }
 });
 
