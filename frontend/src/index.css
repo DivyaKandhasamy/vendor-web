@@ -11,10 +11,6 @@ body {
   @apply bg-primary
 }
 
-.logo{
-  mix-blend-mode: plus-lighter;
-}
-
 .bg-primary{
   background-color: var(--primary-color-blue);
 }
@@ -28,4 +24,25 @@ body {
   opacity: 0.2;
   background: radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent) 10px 10px, linear-gradient(black 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, black 0.8px, var(--primary-color-blue) 0.8px) -0.4px 0;
   background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+}
+
+
+.logo{ 
+  aspect-ratio: 3/1;
+  object-fit: cover;
+  mix-blend-mode: darken;
+}
+
+.table-wrapper{
+  td{
+    border: 1px solid #999;
+  }
+}
+
+.link-text{
+  color: var(--primary-color-blue);
+}
+
+.link-text:hover{
+  text-decoration: underline;
 }
