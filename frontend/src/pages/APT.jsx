@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function APT(){
-    const [gridData, setGridData] = useState([]); useEffect(() => {
+    const [gridData, setGridData] = useState([]); 
+    useEffect(() => {
         async function fetchData() {
           try {
             const response = await axios.get('http://localhost:5000/apt');
