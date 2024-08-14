@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const paramsSchema = new mongoose.Schema({
     paramName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     paramValue: {
         type: String,

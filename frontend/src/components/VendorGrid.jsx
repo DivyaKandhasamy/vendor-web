@@ -162,7 +162,7 @@ const VendorGrid = () => {
                   return (
                     <tr key={data.id}>
                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                        <Link to={`/vendor/details/${data.companyId}`} className='underline'>
+                        <Link to={`/vendors/details/${data.companyId}`} className='font-semibold text-link underline'>
                           {data.vendorName}
                         </Link>
                       </td>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
   --primary-color-blue: #0f172a;
   --primary-color-green: #052e16;
 }
@@ -11,15 +11,15 @@ body {
   @apply bg-primary
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--primary-color-blue);
 }
 
-.text-primary{
+.text-primary {
   color: var(--primary-color-blue);
 }
 
-.pattern-bg{
+.pattern-bg {
   position: absolute;
   opacity: 0.2;
   background: radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--primary-color-blue) 20%, var(--primary-color-blue) 80%, transparent 80%, transparent) 10px 10px, linear-gradient(black 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, black 0.8px, var(--primary-color-blue) 0.8px) -0.4px 0;
@@ -27,23 +27,23 @@ body {
 }
 
 
-.logo{ 
+.logo {
   aspect-ratio: 3/1;
   object-fit: cover;
   mix-blend-mode: darken;
 }
 
-.table-wrapper{
-  td{
+.table-wrapper {
+  td {
     border: 1px solid #999;
   }
 }
 
-.link-text{
+.link-text {
   color: var(--primary-color-blue);
 }
 
-.link-text:hover{
+.link-text:hover {
   text-decoration: underline;
 }
 
@@ -56,7 +56,7 @@ body {
   background-color: var(--primary-color-blue);
 }
 
-.threat-actor-card::before{
+.threat-actor-card::before {
   content: "";
   background-image: url('./assets/apt_bg.jpg');
   background-size: cover;
@@ -107,8 +107,8 @@ body {
   padding: calc(var(--g) + var(--t));
   outline: var(--t) solid #FFFFFF;
   outline-offset: calc(-1 * var(--t));
-  -webkit-mask: conic-gradient(at var(--s) var(--s),#0000 75%,#000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)),linear-gradient(#000,#FFFFFF 0%,#FFFFFF 0%,#FFFFFF 0%) content-box;
-  mask: conic-gradient(at var(--s) var(--s),#0000 75%,#000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)),linear-gradient(#000,#FFFFFF 0%,#FFFFFF 0%,#FFFFFF 0%) content-box;
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%) content-box;
+  mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)), linear-gradient(#000, #FFFFFF 0%, #FFFFFF 0%, #FFFFFF 0%) content-box;
   transition: 0.4s;
   max-width: 200px;
 }
@@ -159,8 +159,8 @@ body {
   font-weight: bold;
 }
 
-.cta-link:hover .card-image{
-    outline-offset: -15px;
+.cta-link:hover .card-image {
+  outline-offset: -15px;
 }
 
 .apt-filter {
@@ -223,3 +223,110 @@ body {
   filter: brightness(0.8);
 }
 
+
+.shodan-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.shodan-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary-color-blue);
+  height: 250px;
+}
+
+.map-image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.shodan-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.general-info,
+.open-ports,
+.web-technologies,
+.vulnerabilities,
+.apt-general-info,
+.links-sec {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  line-height: 2.5;
+  flex: 1;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  -moz-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.apt-general-info{
+  border: 0px;
+  box-shadow: none;
+}
+
+.general-info{
+  border-top: 2px solid green;
+}
+
+.open-ports{
+  border-top: 2px solid maroon;
+}
+
+.vulnerabilities{
+  border-top: 2px solid orange;
+}
+
+.web-technologies{
+  border-top: 2px solid blue;
+}
+
+.links-sec{
+  border-top: 2px solid blueviolet;
+}
+
+.ports-list,
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.port,
+.tech-item {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.vulnerabilities ul {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+.vulnerabilities li {
+  margin-bottom: 10px;
+}
+
+.apt-header{
+  background-color: var(--primary-color-blue);
+  color: white;
+}
+
+.card-2{
+  width: 400px;
+  height: 200px;
+  -webkit-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  -moz-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  cursor: pointer;
+}
