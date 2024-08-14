@@ -7,7 +7,7 @@ export const aptDetailsData = [
       "targetcountryids": [44, 102, 11],
       "attackids": ["T1071.001", "T1059.003"],
       "relatedCVEs": ["CVE-2018-4878", "CVE-2020-0601"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Cozy Bear", "The Dukes"],
       "APTID": "APT0001"
     },
@@ -19,7 +19,7 @@ export const aptDetailsData = [
       "targetcountryids": [131, 22, 78],
       "attackids": ["T1071.003", "T1059.001"],
       "relatedCVEs": ["CVE-2017-11774", "CVE-2018-8653"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt28.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Fancy Bear", "Sofacy"],
       "APTID": "APT0002"
     },
@@ -31,7 +31,7 @@ export const aptDetailsData = [
       "targetcountryids": [57, 19, 89, 99],
       "attackids": ["T1071.001", "T1080"],
       "relatedCVEs": ["CVE-2019-3396", "CVE-2020-3118"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt41.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Barium", "Winnti"],
       "APTID": "APT0003"
     },
@@ -43,7 +43,7 @@ export const aptDetailsData = [
       "targetcountryids": [56, 77, 88, 111],
       "attackids": ["T1105", "T1071.001"],
       "relatedCVEs": ["CVE-2017-0199", "CVE-2018-7600"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt1.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Comment Crew", "Shanghai Group"],
       "APTID": "APT0004"
     },
@@ -55,7 +55,7 @@ export const aptDetailsData = [
       "targetcountryids": [101, 43, 76],
       "attackids": ["T1071.001", "T1106"],
       "relatedCVEs": ["CVE-2019-11510", "CVE-2019-0708"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt10.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Stone Panda", "Red Apollo"],
       "APTID": "APT0005"
     },
@@ -67,7 +67,7 @@ export const aptDetailsData = [
       "targetcountryids": [9, 32, 27],
       "attackids": ["T1082", "T1071.001"],
       "relatedCVEs": ["CVE-2018-7602", "CVE-2018-8174"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt33.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Elfin", "Refined Kitten"],
       "APTID": "APT0006"
     },
@@ -79,7 +79,7 @@ export const aptDetailsData = [
       "targetcountryids": [81, 57, 132],
       "attackids": ["T1069.001", "T1071.001"],
       "relatedCVEs": ["CVE-2017-8759", "CVE-2018-8174"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt32.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["OceanLotus", "SeaLotus"],
       "APTID": "APT0007"
     },
@@ -91,7 +91,7 @@ export const aptDetailsData = [
       "targetcountryids": [61, 44, 90],
       "attackids": ["T1105", "T1071.001"],
       "relatedCVEs": ["CVE-2017-0199", "CVE-2018-4878"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt3.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Buckeye", "Gothic Panda"],
       "APTID": "APT0008"
     },
@@ -103,7 +103,7 @@ export const aptDetailsData = [
       "targetcountryids": [22, 65, 88],
       "attackids": ["T1071.001", "T1059.003"],
       "relatedCVEs": ["CVE-2017-0143", "CVE-2019-0708"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt12.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["IXESHE", "Numbered Panda"],
       "APTID": "APT0009"
     },
@@ -115,7 +115,7 @@ export const aptDetailsData = [
       "targetcountryids": [34, 79, 91],
       "attackids": ["T1080", "T1071.001"],
       "relatedCVEs": ["CVE-2018-4878", "CVE-2019-0708"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt37.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Reaper", "ScarCruft"],
       "APTID": "APT0010"
     },
@@ -127,7 +127,7 @@ export const aptDetailsData = [
       "targetcountryids": [102, 77, 59],
       "attackids": ["T1071.003", "T1090"],
       "relatedCVEs": ["CVE-2017-11774", "CVE-2019-11510"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt38.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Lazarus Group", "BlueNoroff"],
       "APTID": "APT0011"
     },
@@ -139,7 +139,7 @@ export const aptDetailsData = [
       "targetcountryids": [100, 23, 58],
       "attackids": ["T1106", "T1071.001"],
       "relatedCVEs": ["CVE-2019-0708", "CVE-2018-7602"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt39.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Chafer", "Remix Kitten"],
       "APTID": "APT0012"
     },
@@ -151,7 +151,7 @@ export const aptDetailsData = [
       "targetcountryids": [12, 31, 54],
       "attackids": ["T1105", "T1071.001"],
       "relatedCVEs": ["CVE-2017-0143", "CVE-2018-4878"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt5.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Manganese", "NUCLEON"],
       "APTID": "APT0013"
     },
@@ -163,7 +163,7 @@ export const aptDetailsData = [
       "targetcountryids": [15, 45, 60],
       "attackids": ["T1071.001", "T1080"],
       "relatedCVEs": ["CVE-2019-0708", "CVE-2018-7602"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt6.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Jade Panda", "White Feather"],
       "APTID": "APT0014"
     },
@@ -175,7 +175,7 @@ export const aptDetailsData = [
       "targetcountryids": [39, 64, 81],
       "attackids": ["T1071.003", "T1059.001"],
       "relatedCVEs": ["CVE-2017-8759", "CVE-2019-11510"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt7.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Scarlet Spider", "Red Tornado"],
       "APTID": "APT0015"
     },
@@ -187,7 +187,7 @@ export const aptDetailsData = [
       "targetcountryids": [28, 52, 99],
       "attackids": ["T1080", "T1071.001"],
       "relatedCVEs": ["CVE-2018-4878", "CVE-2017-8759"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt8.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Cobalt Group", "LuminousMoth"],
       "APTID": "APT0016"
     },
@@ -199,7 +199,7 @@ export const aptDetailsData = [
       "targetcountryids": [26, 53, 92],
       "attackids": ["T1106", "T1071.001"],
       "relatedCVEs": ["CVE-2019-0708", "CVE-2018-4878"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt9.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Aurora Panda", "Dragonfly"],
       "APTID": "APT0017"
     },
@@ -211,7 +211,7 @@ export const aptDetailsData = [
       "targetcountryids": [30, 48, 74],
       "attackids": ["T1071.001", "T1059.003"],
       "relatedCVEs": ["CVE-2017-0143", "CVE-2018-8174"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt11.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Steel Eagle", "Bronze Butler"],
       "APTID": "APT0018"
     },
@@ -223,7 +223,7 @@ export const aptDetailsData = [
       "targetcountryids": [33, 66, 82],
       "attackids": ["T1071.001", "T1080"],
       "relatedCVEs": ["CVE-2018-7602", "CVE-2019-11510"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt13.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Red Lotus", "BlackCloud"],
       "APTID": "APT0019"
     },
@@ -235,7 +235,7 @@ export const aptDetailsData = [
       "targetcountryids": [14, 41, 76],
       "attackids": ["T1071.003", "T1059.001"],
       "relatedCVEs": ["CVE-2018-4878", "CVE-2019-0708"],
-      "imgurl": "https://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svghttps://socradar.io/labs/static/img/icon/threat_actor/search_card_image.svgapt14.jpg",
+      "imgurl": "https://i.imgur.com/fZTjL3m.png",
       "otherKnownNames": ["Silent Lotus", "Ghost Dragon"],
       "APTID": "APT0020"
     }

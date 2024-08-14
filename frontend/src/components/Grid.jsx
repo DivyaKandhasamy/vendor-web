@@ -35,7 +35,7 @@ export default function Grid(props) {
                   const breachDate = new Date(data.breachDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
-                    <tr key={data.id}>
+                    <tr key={data.companyId}>
                       <td>
                       <Link to={`/vendors/details/${data.companyId}`} className='font-semibold text-link underline'>
                         {data.vendorName}

@@ -40,7 +40,7 @@ const NewThreat = () => {
         </div>
         <div className='min-h-screen mt-20 px-10'>
           <h1 className='text-gray-900 font-semibold mt-5 text-3xl'>Select a report:</h1>
-          <a href={'https://'+reportDownloadUrl}>
+          <a href={reportDownloadUrl}>
           <div className='hover:bg-slate-100 card-2 bg-slate-50 flex flex-col items-center justify-center mx-20 mt-12 rounded-xl'>
             <IoBusiness className='text-[#0f172a] h-[45px] w-auto' />
             <p className='text-link underline font-semibold pt-4'>Business Threat Report</p>

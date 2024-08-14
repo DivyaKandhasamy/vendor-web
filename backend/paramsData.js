@@ -1,10 +1,10 @@
 export const paramsData = [{
     "paramName": 'APT_OF_THE_MONTH',
-    "paramValue": "1"
+    "paramValue": "APT0001"
 },
 {
     "paramName": 'REPORT_DOWNLOAD_URL',
-    "paramValue": "www.google.com"
+    "paramValue": "https://www.google.com"
 },
 {
     "paramName": 'APT_OF_THE_MONTH_IMAGE',

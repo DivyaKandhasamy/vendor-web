@@ -10,7 +10,7 @@ export default function APT() {
   const [targetCountry, setTargetCountry] = useState("0");
   const [targetSector, setTargetSector] = useState("0");
   const [aptOfTheMonthImage, setAptOfTheMonthImage] = useState('');
-  const [aptOfTheMonthId, setAptOfTheMonthId] = useState(-1);
+  const [aptOfTheMonthId, setAptOfTheMonthId] = useState('');
   const [allSectors, setAllSectors] = useState([
     { "sectorId": 0, "sectorName": "All" },
     { "sectorId": 1, "sectorName": "Agriculture" },
@@ -272,7 +272,7 @@ export default function APT() {
     async function fetchAptId() {
       try {
         const response = await axios.get('http://localhost:5000/params/APT_OF_THE_MONTH');
-        setAptOfTheMonthId(Number(response.data.paramValue));
+        setAptOfTheMonthId(response.data.paramValue);
       }
       catch (error) {
         console.error('Error fetching data:', error);
@@ -354,7 +354,7 @@ export default function APT() {
           >
             {allCountries.map((country) => {
               return (
-                <option value={country.countryId}>{country.countryName}</option>
+                <option key={country.countryId} value={country.countryId}>{country.countryName}</option>
               )
             })}
           </select>
@@ -369,7 +369,7 @@ export default function APT() {
           >
             {allSectors.map((sector) => {
               return (
-                <option value={sector.sectorId}>{sector.sectorName}</option>
+                <option key={sector.sectorId} value={sector.sectorId}>{sector.sectorName}</option>
               )
             })}
           </select>

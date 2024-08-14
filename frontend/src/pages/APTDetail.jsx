@@ -52,7 +52,7 @@ const DetailPage = () => {
         <div className='min-w-full relative apt-header h-96 flex justify-start items-center'>
           <div className='w-full pattern-bg h-full' />
           <div className='p-20'>
-            <img className='rounded-xl' width="250px" src="https://i.imgur.com/fZTjL3m.png" alt='apt logo' />
+            <img className='rounded-xl' width="250px" src={gridData.imgurl} alt='apt logo' />
           </div>
           <div>
             <section className="apt-general-info">
