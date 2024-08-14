@@ -1,6 +1,6 @@
 export const paramsData = [{
     "paramName": 'APT_OF_THE_MONTH',
-    "paramValue": 1
+    "paramValue": "1"
 },
 {
     "paramName": 'REPORT_DOWNLOAD_URL',

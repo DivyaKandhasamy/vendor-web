@@ -29,7 +29,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className='p-4'>
-          <NavLink
+          <NavLink exact={false}
             to="/vendors"
             className={({ isActive }) =>
               isActive ? 'border-b-2 border-[#00df9a]' : 'hover:border-b-2 hover:border-[#00df9a]'
@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className='p-4'>
-          <NavLink
+          <NavLink exact={false}
             to="/apt"
             className={({ isActive }) =>
               isActive ? 'border-b-2 border-[#00df9a]' : 'hover:border-b-2 hover:border-[#00df9a]'

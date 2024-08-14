@@ -21,6 +21,7 @@ function App() {
         <Route path='/apt' element={<APT />} />
         <Route path='/newthreat' element={<NewThreat/>} />
         <Route path="/vendor/details/:id" element={<VendorDetails/>} />
+        <Route path="/vendors/details/:id" element={<VendorDetails/>} />
         <Route path='/apt/details/:id' element={<DetailPage />} />
       </Routes>
       <Footer/>
