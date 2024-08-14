@@ -253,6 +253,7 @@ body {
 .open-ports,
 .web-technologies,
 .vulnerabilities,
+.apt-general-info,
 .links-sec {
   padding: 20px;
   border: 1px solid #ccc;
@@ -266,6 +267,11 @@ body {
   box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+
+.apt-general-info{
+  border: 0px;
+  box-shadow: none;
 }
 
 .general-info{
@@ -309,4 +315,18 @@ body {
 
 .vulnerabilities li {
   margin-bottom: 10px;
+}
+
+.apt-header{
+  background-color: var(--primary-color-blue);
+  color: white;
+}
+
+.card-2{
+  width: 400px;
+  height: 200px;
+  -webkit-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  -moz-box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  box-shadow: 0px 0px 18px 3px rgb(229, 229, 229);
+  cursor: pointer;
 }
