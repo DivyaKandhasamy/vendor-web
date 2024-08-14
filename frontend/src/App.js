@@ -8,6 +8,7 @@ import Vendor from './pages/Vendor';
 import APT from './pages/APT';
 import VendorDetails from './pages/VendorDetails';
 import DetailPage from './pages/APTDetail';
+import NewThreat from './pages/NewThreat';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/vendors' element={<Vendor/>} />
         <Route path='/apt' element={<APT />} />
+        <Route path='/newthreat' element={<NewThreat/>} />
         <Route path="/vendor/details/:id" element={<VendorDetails/>} />
         <Route path='/apt/details/:id' element={<DetailPage />} />
       </Routes>

@@ -48,6 +48,16 @@ const Navbar = () => {
             APT
           </NavLink>
         </li>
+        <li className='p-4'>
+          <NavLink
+            to="/newthreat"
+            className={({ isActive }) =>
+              isActive ? 'border-b-2 border-[#00df9a]' : 'hover:border-b-2 hover:border-[#00df9a]'
+            }
+          >
+            New Threat
+          </NavLink>
+        </li>
         <button className='bg-[#00df9a] hover:brightness-75 ease-in duration-150 cursor-pointer w-[150px] rounded-md font-medium my-6 mx-auto py-2 text-black'>Login</button>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>

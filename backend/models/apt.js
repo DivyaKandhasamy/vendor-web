@@ -8,11 +8,11 @@ const aptSchema = new mongoose.Schema({
   targetedCountriesIds: {
     type: [Number]
   },
-  sectorIds: {
+  targetsectors: {
     type: [Number]
   },
   aptId: {
-    type: Number
+    type: String,
   }
 });
 
