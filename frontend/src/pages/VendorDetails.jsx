@@ -5,16 +5,6 @@ import { useParams, Link } from 'react-router-dom';
 const VendorDetails = () => {
   const [gridData, setGridData] = useState({});
   const [vendorBreachDate, setVendorBreachDate] = useState('');
-  const vulnerabilities = [
-    {
-      id: "CVE-2018-15919",
-      description: "Remotely observable behaviour in auth-gss2 in OpenSSH..."
-    },
-    {
-      id: "CVE-2017-15906",
-      description: "The process, open function in sftp-server in OpenSSH..."
-    }
-  ];
   const { id } = useParams()
   useEffect(() => {
     async function fetchData() {
@@ -51,10 +41,10 @@ const VendorDetails = () => {
           <p className='text-center text-white text-2xl font-semibold min-w-full'>{gridData.vendorName}</p>
           <p className='text-center pt-4 text-white min-w-full'>{gridData.vendorDesc}</p>
         </header>
-        <div className="shodan-page bg-gray-100 min-w-screen min-h-screen">
+        <div className="shodan-page bg-gray-100 min-w-screen">
           <div className="shodan-content">
-            <div className='flex'>
-              <section className="general-info">
+            <div className='flex flex-col md:flex-row'>
+              <section className="general-info mb-5 md:mb-0">
                 <h2 className='font-semibold text-xl'>General Information:</h2>
                 <ul className='pt-2'>
                   <li><span className='font-semibold pe-2'>Country:</span> {gridData.vendorCountry}</li>

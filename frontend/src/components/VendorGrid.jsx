@@ -30,7 +30,7 @@ const VendorGrid = () => {
   useEffect(() => {
     // Reset to page 1 when filters change
     setCurrentPage(1);
-  }, [vendorNameFilter, breachDateFilter, alphabetFilter,riskScoreFilter]);
+  }, [vendorNameFilter, breachDateFilter, alphabetFilter, riskScoreFilter]);
 
   useEffect(() => {
     // Update the total number of pages whenever the data or filters change
@@ -46,7 +46,7 @@ const VendorGrid = () => {
       );
     });
     setTotalPages(Math.ceil(filtered.length / itemsPerPage));
-  }, [gridData, vendorNameFilter, breachDateFilter, alphabetFilter,riskScoreFilter]);
+  }, [gridData, vendorNameFilter, breachDateFilter, alphabetFilter, riskScoreFilter]);
 
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -70,28 +70,28 @@ const VendorGrid = () => {
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 bg-gray-100">
-      <div className="flow-root">
+      <div className="flex justify-center">
+        <div className="flex justify-center w-1/2 flex-wrap">
+          {Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)).map(letter => (
+            <button
+              key={letter}
+              className={`px-3 py-1 my-2 mx-2 border rounded-md text-sm ${alphabetFilter === letter ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
+              onClick={() => setAlphabetFilter(letter)}
+            >
+              {letter}
+            </button>
+          ))}
+          <button
+            className={`px-3 py-1 my-2 mx-2 border rounded-md text-sm ${alphabetFilter === '' ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
+            onClick={() => setAlphabetFilter('')}
+          >
+            All
+          </button>
+        </div>
+      </div>
+      <div className="flow-root mt-6 md:mt-0">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="flex justify-center">
-            <div className="flex justify-center w-1/2 flex-wrap">
-              {Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)).map(letter => (
-                <button
-                  key={letter}
-                  className={`px-3 py-1 my-2 mx-2 border rounded-md text-sm ${alphabetFilter === letter ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
-                  onClick={() => setAlphabetFilter(letter)}
-                >
-                  {letter}
-                </button>
-              ))}
-              <button
-                className={`px-3 py-1 my-2 mx-2 border rounded-md text-sm ${alphabetFilter === '' ? 'bg-blue-500 text-white' : 'bg-white text-gray-900'}`}
-                onClick={() => setAlphabetFilter('')}
-              >
-                All
-              </button>
-            </div>
-          </div>
-          <div className="inline-block min-w-full min-h-screen py-2 align-middle sm:px-6 lg:px-8">
+          <div className="inline-block min-w-full overflow-x-auto min-h-screen py-2 align-middle sm:px-6 lg:px-8">
             {gridData.length > 0 && <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr>
@@ -160,8 +160,8 @@ const VendorGrid = () => {
                   const breachDate = new Date(data.breachDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
-                    <tr key={data.id}>
-                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    <tr key={data.companyId}>
+                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                         <Link to={`/vendors/details/${data.companyId}`} className='font-semibold text-link underline'>
                           {data.vendorName}
                         </Link>
@@ -176,14 +176,14 @@ const VendorGrid = () => {
                     </tr>
                   );
                 })}
-                {!paginatedData.length > 0 && 
+                {!paginatedData.length > 0 &&
                   <tr>
-                    <td/>
-                    <td/>
+                    <td />
+                    <td />
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">No records found</td>
-                    <td/>
-                    <td/>
-                    <td/>
+                    <td />
+                    <td />
+                    <td />
                   </tr>}
               </tbody>
             </table>}
@@ -196,42 +196,42 @@ const VendorGrid = () => {
                 <span className="sr-only">Loading...</span>
               </div>
             }
-            {gridData.length > 0 && <nav className="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0 mt-4 mb-10">
-              <div className="-mt-px flex w-0 flex-1">
-                <button
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  disabled={currentPage === 1}
-                >
-                  <ArrowLongLeftIcon aria-hidden="true" className="mr-3 h-5 w-5 text-gray-400" />
-                  Previous
-                </button>
-              </div>
-              <div className="hidden md:-mt-px md:flex">
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <button
-                    key={index + 1}
-                    onClick={() => handlePageChange(index + 1)}
-                    className={`inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium ${currentPage === index + 1 ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
-                  >
-                    {index + 1}
-                  </button>
-                ))}
-              </div>
-              <div className="-mt-px flex w-0 flex-1 justify-end">
-                <button
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  className="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  disabled={currentPage === totalPages}
-                >
-                  Next
-                  <ArrowLongRightIcon aria-hidden="true" className="ml-3 h-5 w-5 text-gray-400" />
-                </button>
-              </div>
-            </nav>}
           </div>
         </div>
       </div>
+      {gridData.length > 0 && <nav className="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0 pt-4 pb-10">
+        <div className="-mt-px flex w-0 flex-1">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            disabled={currentPage === 1}
+          >
+            <ArrowLongLeftIcon aria-hidden="true" className="mr-3 h-5 w-5 text-gray-400" />
+            Previous
+          </button>
+        </div>
+        <div className="hidden md:-mt-px md:flex">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => handlePageChange(index + 1)}
+              className={`inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium ${currentPage === index + 1 ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+        <div className="-mt-px flex w-0 flex-1 justify-end">
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            className="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            disabled={currentPage === totalPages}
+          >
+            Next
+            <ArrowLongRightIcon aria-hidden="true" className="ml-3 h-5 w-5 text-gray-400" />
+          </button>
+        </div>
+      </nav>}
     </div>
   );
 };
