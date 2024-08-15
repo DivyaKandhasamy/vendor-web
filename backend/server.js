@@ -9,7 +9,7 @@ import cors from 'cors'
 const app = express();
 const port = process.env.PORT || 3000;
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'localhost:3000',
   methods: 'GET',
   preflightContinue: false,
   optionsSuccessStatus: 204,

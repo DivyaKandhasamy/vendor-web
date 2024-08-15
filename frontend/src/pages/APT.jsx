@@ -11,7 +11,7 @@ export default function APT() {
   const [targetSector, setTargetSector] = useState("0");
   const [aptOfTheMonthImage, setAptOfTheMonthImage] = useState('');
   const [aptOfTheMonthId, setAptOfTheMonthId] = useState('');
-  const [allSectors, setAllSectors] = useState([
+  const allSectors = useState([
     { "sectorId": 0, "sectorName": "All" },
     { "sectorId": 1, "sectorName": "Agriculture" },
     { "sectorId": 2, "sectorName": "Aerospace" },
@@ -73,7 +73,7 @@ export default function APT() {
     { "sectorId": 58, "sectorName": "Venture Capital" }
   ]
   )
-  const [allCountries, setAllCountries] = useState([
+  const allCountries = useState([
     { "countryId": 0, "countryName": "All" },
     { "countryId": 1, "countryName": "Afghanistan" },
     { "countryId": 2, "countryName": "Albania" },
@@ -302,20 +302,20 @@ export default function APT() {
 
   return (
     <>
-      <div className="relative threat-actor-card bg-gray-100">
-        <div className="content">
-          <h2 className="title">THREAT ACTOR INTELLIGENCE</h2>
-          <h3 className="subtitle">KNOW YOUR ENEMY</h3>
-          <p className="description">
+      <div className="relative flex-col lg:justify-between lg:px-20 lg:min-h-96 lg:flex-row threat-actor-card bg-gray-100">
+        <div className="md:content w-1/2 flex-col">
+          <h2 className="title text-center lg:text-left">THREAT ACTOR INTELLIGENCE</h2>
+          <h3 className="subtitle text-center lg:text-left">KNOW YOUR ENEMY</h3>
+          <p className="description text-center lg:text-left mb-10 lg:mb-0">
             Identify active threat actors targeting your industry or region right now. Analyze their Tactics, Techniques,
             and Procedures (TTPs) to predict their next moves. Focus your defenses on the most pressing risks. Take
             control of your cybersecurity and stay one step ahead of attackers.
           </p>
         </div>
-        <div className='card-cta-section'>
+        <div className='card-cta-section flex'>
           <Link to={`/apt/details/${aptOfTheMonthId}`} className="cta-link">
             <div className="card">
-              {aptOfTheMonthImage !== '' && <img className='card-image' src={aptOfTheMonthImage} />}
+              {aptOfTheMonthImage !== '' && <img alt='apt' className='card-image' src={aptOfTheMonthImage} />}
               {aptOfTheMonthImage === '' &&
                 <div>
                   <div className='flex justify-center items-center min-h-full' role="status">
@@ -331,10 +331,10 @@ export default function APT() {
           </Link>
         </div>
       </div>
-      <div className="apt-filter flex justify-around items-center">
-        <div className="filter-item">
+      <div className="apt-filter lg:flex-row flex-col flex justify-around items-center">
+        <div className="filter-item mb-5">
           <label htmlFor="threatActorName">
-            Threat Actor Name:
+            Filter By Name:
           </label>
           <input
             type="text"
@@ -345,7 +345,7 @@ export default function APT() {
           />
         </div>
 
-        <div className="filter-item">
+        <div className="filter-item mb-5">
           <label htmlFor="targetCountry">Target Country:</label>
           <select
             id="targetCountry"
@@ -360,7 +360,7 @@ export default function APT() {
           </select>
         </div>
 
-        <div className="filter-item">
+        <div className="filter-item mb-5">
           <label htmlFor="targetSectors">Target Sectors:</label>
           <select
             id="targetSector"
@@ -388,7 +388,7 @@ export default function APT() {
                 const rows = [];
                 for (let index = 0; index < gridData.length; index += 3) {
                   rows.push(
-                    <tr key={gridData[index].id}>
+                    <tr key={gridData[index].aptId}>
                       {gridData[index] && (
                         <td className="whitespace-nowrap text-center py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                           <Link className='font-semibold link-text' to={`/apt/details/${gridData[index].aptId}`}>{gridData[index].aptName}</Link>

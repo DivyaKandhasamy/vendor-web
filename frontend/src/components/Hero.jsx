@@ -4,10 +4,10 @@ import banner from '../assets/hero-image.webp'
 const Hero = () => {
   return (
     <>
-      <div className='flex px-10 bg-gray-100 pt-10'>
-        <div className='text-gray-900'>
-          <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-            <h1 className='text-7xl font-bold md:py-6'>
+      <div className='flex flex-col-reverse lg:flex-row lg:justify-center lg:items-center px-10 bg-gray-100 pt-10'>
+        <div className='flex-1 text-gray-900'>
+          <div className='max-w-[800px] mt-[-80px] w-full mx-auto text-center flex flex-col lg:justify-center'>
+            <h1 className='text-4xl mt-16 lg:mt-0 md:text-6xl font-bold py-6'>
               Secure your supply chain
             </h1>
             <div className='flex justify-center items-center'>
@@ -25,7 +25,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className='flex-1'>
+        <div className='flex-1 justify-center w-full'>
           <img alt='banner' src={banner}/>
         </div>
       </div>

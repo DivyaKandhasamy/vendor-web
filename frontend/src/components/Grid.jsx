@@ -36,7 +36,7 @@ export default function Grid(props) {
                   const dateAdded = new Date(data.dateAdded).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
                   return (
                     <tr key={data.companyId}>
-                      <td>
+                      <td className="text-center md:text-left">
                       <Link to={`/vendors/details/${data.companyId}`} className='font-semibold text-link underline'>
                         {data.vendorName}
                       </Link>

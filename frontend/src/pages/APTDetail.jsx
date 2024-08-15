@@ -36,6 +36,8 @@ const DetailPage = () => {
       case 4:
         setCvesAccodionOpen((prev) => !prev);
         break;
+      default: 
+        break;
     }
   };
   if(gridData == null){
@@ -49,20 +51,20 @@ const DetailPage = () => {
   else if (gridData.APTName !== null && gridData.APTName !== undefined) {
     return (
       <div className='bg-gray-100 min-h-screen'>
-        <div className='min-w-full relative apt-header h-96 flex justify-start items-center'>
+        <div className='min-w-full relative apt-header min-h-96 flex flex-col md:flex-row justify-start items-center'>
           <div className='w-full pattern-bg h-full' />
-          <div className='p-20'>
+          <div className='p-10 md:p-20'>
             <img className='rounded-xl' width="250px" src={gridData.imgurl} alt='apt logo' />
           </div>
           <div>
-            <section className="apt-general-info">
+            <section className="text-center lg:text-left apt-general-info">
               <h2 className='font-semibold text-xl'>General Information:</h2>
               <ul className='pt-2'>
                 <li key="name"><span className='font-semibold pe-2'>Name:</span> {gridData.APTName}</li>
                 <li key="rank"><span className='font-semibold pe-2'>Rank:</span> {gridData.APTRank}</li>
                 <li key="desc"><span className='font-semibold pe-2'>Description:</span> {gridData.APTDescription}</li>
                 <li key="alias" className='flex flex-col'>
-                  <span className='flex flex-row font-semibold pe-2'>Also known as:</span>
+                  <span className='flex flex-row justify-center lg:justify-start font-semibold pe-2'>Also known as:</span>
                   <section>
                     {gridData.otherKnownNames.map((data) => {
                       return (
@@ -77,7 +79,7 @@ const DetailPage = () => {
             </section>
           </div>
         </div>
-        <div className='p-20'>
+        <div className='p-5 md:p-20'>
           <Accordion
             country
             title="Target Countries"
